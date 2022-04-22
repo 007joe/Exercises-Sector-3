@@ -1,0 +1,73 @@
+/* Part 1: Grid arrangement */
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "banner banner banner"
+        "menu sandwiches events"
+        "legal legal legal";
+
+    grid-template-columns: 1fr 2fr 1fr;
+
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.container > header {
+    grid-area: banner;
+}
+
+#menu-nav {
+    grid-area: menu;
+}
+
+.container > main {
+    grid-area: sandwiches;
+}
+
+aside.sidebar {
+    grid-area: events;
+}
+
+.container > footer {
+    grid-area: legal;
+}
+
+/* Part 2: Responsive Design */ 
+
+
+/* Tablet layout */
+@media screen and (max-width: 768px) {
+
+    .container {
+        grid-template-areas:
+            "banner banner"
+            "menu sandwiches"
+            "events sandwiches"
+            "legal legal";
+        grid-template-columns: 1fr 2fr;
+    }
+
+}
+
+/* Mobile Layout */
+@media screen and (max-width: 425px) {
+
+    .container {
+        grid-template-areas:
+        "banner"
+        "events"
+        "menu"
+        "sandwiches"
+        "legal";    
+        column-gap: 0;
+        grid-template-columns: 1fr;
+    }
+    
+    /*
+    body {
+        background-color: red;
+    }
+    */
+    
+}
