@@ -1,64 +1,47 @@
 <template>
-<div>
-<a
- id="show-form-button"
-  href="#"
-  v-if="showForm === false"
- v-on:click.prevent="showForm = true"
-    >Show Form</a>
+  <form class="new-book-form" v-on:submit.prevent="saveBook">
+    <input class="title-input" type="text" placeholder="Title" v-model="book.title" />
+    <input class="author-input" type="text" placeholder="Author" v-model="book.author" />
+    <input class="isbn-input" type="text" placeholder="ISBN" v-model="book.isbn" />
+    <button>Save</button>
+  </form>
+</template>
 
-    
-    <a
- id="hide-form-button"
-  href="#"
-  v-if="showForm === true"
- v-on:click.prevent="showForm = false"
-    >Hide Form</a>
-
-    <!-- Show form 1, hide form 2. reverse show from lecture -->
-    
-
-    <form v-on:submit.prevent="addBook" v-if="showForm === true"/>
-        <div class ="new-book-form">
-            <label for="title-input">Title</label>
-        <input id="title-input" type="text" v-model="addBook.title" />
-        </div>
-       <div class ="new-book-form">
-           <label for ="author-input">Author</label>
-           <input id="author-input" type="text" v-model="addBook.author" />
-       </div>
-
-       <div class ="new-book-form">
-           <label for ="isbn-input">Isbn</label>
-           <input id ="isbn-input" type="text" v-model="addBook.isbn" />
-           </div>
-           <input type = "submit" value="Save"/>
-           <input type="button" value="Cancel" v-on:click.prevent="resetForm"/>
-</div>
-        </template>
-
-        <script> 
-            export default {
-                name: "add-book",
-                data() {
-                    return {
-                        showForm: false,
-                        addBook: {
-                            read: false
-                        }
-                    };
-                },
-                methods: {
-                    addNewBook() {
-                        this.$store.commit("ADD_BOOK", this.newBook)
-                        this.resetForm();
-                    },
-                    resetForm() {
-                        this.showForm = false;
-                        this.newBook = {};
-                    },
-                },
+<script>
+export default {
+    name: "new-book-form",
+    data() {
+        return {
+            book: {
+                title: '',
+                author: '',
+                read: false,
+                isbn: ''
+            }
+        }
+    },
+    methods: {
+        saveBook() {
+            this.$store.commit('SAVE_BOOK', this.book);
+            this.book = {
+                title: '',
+                author: '',
+                read: false,
+                isbn: ''
             };
-            </script>
+            this.$router.push({name: 'MyBooks'})
+        }
+    }
+}
+</script>
 
-        
+<style>
+.new-book-form {
+    margin: 20px;
+}
+
+.new-book-form input, .new-book-form button {
+    margin: 10px;
+    font-size: 1rem;
+}
+</style>

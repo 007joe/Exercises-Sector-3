@@ -1,21 +1,17 @@
 <template>
   <div id="app">
-    <h1>Reading List</h1>
-    <reading-list />
-    <new-book-form />
-  </div>
+<div id="nav">
+  <router-link v-bind:to="{name: 'Home'}">Home</router-link> |
+   <router-link v-bind:to="{name: 'MyBooks'}">My Books</router-link>
+</div>
+<router-view />
+ </div>
 </template>
 
 <script>
-import ReadingList from './components/ReadingList.vue';
-import NewBookForm from './components/NewBookForm.vue';
 
 export default {
-  name: 'app',
-  components: {
-    ReadingList,
-    NewBookForm
-  }
+  name: 'app'
 }
 </script>
 
