@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Form</title>
+
+    <link rel="stylesheet" href="info.css"/>
+</head>
+<body>
+    <h1> Info Form </h1>
+    <form action="https:FakeUrl.Fakie" method = "GET">
+        <label for="yourname">Your Name:</label>
+        <input type="text" id="yourname" name="inputname"
+        required>
+        <br>
+
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="inputemail"
+            required>
+                <br>
+                <label for="dateOfBirth">Date Of Birth:</label>
+            <input type="date" id="dateOfBirth" name="inputBirthDate">
+            <br>
+                <label for="favoriteColor">Favorite Color:</label>
+            <input type="color" id="favoriteColor" name="inputColor">
+            <br>
+                <label for="favoriteNumber">Favorite Number:</label>
+            <input type="number" id="favoriteNumber" name="inputNumber">
+
+            <p><input type="checkbox" required name="confirmation"> I confirm that the above submissions are correct.</p>
+            <input type="submit"> 
+        </div>
+    </form>
+</body>
+</html>

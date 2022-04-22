@@ -1,0 +1,46 @@
+html {
+    background-color: black;
+    font-family: sans-serif;
+
+}
+
+li {
+    color: white;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+}
+
+table {
+    color: white;
+}
+
+p {
+    font-style: italic;
+    color: mintcream;
+    font-weight: bold;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+th {
+    font-size: 20px;
+    text-align: left;
+}
+
+td {
+    padding-right: 1.5em;
+    line-height: 1.5;
+}
+
+a:visited {
+    color: blue;
+}
